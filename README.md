@@ -5,4 +5,6 @@
 Este repositorio contiene los trabajaos de la unidad 3 de la alumna Elsaluz Andrade 
 el software que utilizamos es Visual Studio Code y la biblioteca **Aframe**
 vinculo de las siguientes tegnologías:
- [Aframe] (https://aframe.io)
+ [Aframe] (https://aframe.io)  
+ En la clase 5 hicimos un ejercicio de entidades en 
+ la arquitectura **ECS** de Aframe
