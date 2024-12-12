@@ -2,9 +2,8 @@
 # Elsaluz Andrade
 ## Uea 4
 ### Arte
-Este repositorio contiene los trabajaos de la unidad 3 de la alumna Elsaluz Andrade 
+Este repositorio contiene los trabajaos de la unidad 3 de Elizx2  de la carrera de Arte y Comunicación Digital de la UAM
 el software que utilizamos es Visual Studio Code y la biblioteca **Aframe**
 vinculo de las siguientes tegnologías:
  [Aframe] (https://aframe.io)  
- En la clase 5 hicimos un ejercicio de entidades en 
- la arquitectura **ECS** de Aframe 
+ Hemos estado trabajando con varias funciones como poner un **entorno**, **texto** y en la ultima clase aprendimos a poner **video**
