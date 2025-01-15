@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soni</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+    <script>
+        AFRAME.registercomponent ('dirtyboy', {
+            int:function(){
+                let botonControl=this.el;
+                botonControl.addEventListener ( 'click', function(ev) {
+                    let metodo = ev.srcElement.id
+                }
+
+                )}
+        } );
+    </script>
+</head>
+<body>
+    <a-scene>
+        
+        <a-assets></a-assets>
+        
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+        
+        <a-entity  id="paisaje" geometry="primitive: plane" material="color: blue" position="0 0.5 -4" sound></a-entity>
+
+        <a-box id="play" color="red" position="0 0.5 -4" scale="0.3 0.3 0.3 controlAudio"></a-box>
+        <a-box id="play" color="green" position="0.3 0.3 0.3" scale="0.3 0.3 0.3 controlAudio"></a-box>
+        <a-box id="play" color="blue" position="1 0.2 -4" scale="0.3 0.3 0.3 controlAudio"></a-box>
+    </a-scene>
+</body>
+</html>

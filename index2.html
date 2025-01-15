@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuento</title>
+
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+    
+</head>
+<body>
+    
+    <a-scene background="color: aqua">
+
+        <a-assets>
+            <a-asset-item id="cocina5" src="assets_in/modelo_3d/mesa cocina.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-assets>
+            <img id="pared_textura" src="assets_in/pared.jpg">
+        </a-assets>
+    
+        <a-assets>
+            <img id="piso" src="assets_in/suelo.jpg">
+        </a-assets>
+
+        <a-entity environment="preset: forest; grid: none"></a-entity>
+
+          <!-- Paredes de la cabaña -->
+        <!-- Pared trasera -->
+        <a-entity geometry="primitive: box; width: 8; height: 4; depth: 0.2" 
+                  material="src: #pared_textura" 
+                  position="0 2 -10"></a-entity>
+        
+        <!-- Pared izquierda -->
+        <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
+                  material="src: #pared_textura" 
+                  position="-4 2 -6"></a-entity>
+
+        <!-- Pared derecha -->
+        <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
+                  material="src: #pared_textura"
+                  position="4 2 -6"></a-entity>
+
+        <!-- Pared delantera con puerta -->
+        <a-entity geometry="depth: 0.2; height: 3.5; width: 3" material="src: #pared_textura" position="2.48992 1.95208 -2" scale="1 1.10776 1"></a-entity>
+        <a-entity geometry="depth: 0.2; height: 3.5; width: 3" material="src: #pared_textura" position="-2.57318 1.95299 -2" scale="1 1.12353 1"></a-entity>
+        <!-- Puerta -->
+        <a-entity geometry="depth: 0.1; height: 3; width: 2" material="src: #pared_textura" position="0 3.24171 -1.95884" rotation="0 0 90" scale="0.6518 1 1"></a-entity>
+
+        <!-- Ventanas -->
+        <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
+                  material="color: lightblue; opacity: 0.8" 
+                  position="-2.5 2 -10.1"></a-entity>
+
+        <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
+                  material="color: lightblue; opacity: 0.8" 
+                  position="2.5 2 -10.1"></a-entity>
+
+        <!-- Techo -->
+        <a-entity geometry="primitive: cone; height: 4; radiusBottom: 6; segmentsRadial: 4" material="color: #502415" position="0 5.89006 -6" rotation="0 45 0"></a-entity>
+
+        <!-- Piso interior -->
+        <a-entity geometry="primitive: box; width: 8; height: 0.1; depth: 8" 
+         material="src: #piso" 
+                  position="0 0 -6"></a-entity>
+        <!--dentro-->
+        <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.00649 0.87511 -6.57772" scale="0.50044 0.40334 0.57181"></a-entity>
+        <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="0.7825 0.41096 -6.53854" scale="0.20863 0.18345 0.27227"></a-entity>
+        <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.02633 0.411 -5.24701" scale="0.209 0.183 0.272"></a-entity>
+    </a-scene>
+
+</body>
+</html>
