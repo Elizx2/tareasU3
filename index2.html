@@ -11,56 +11,72 @@
     
 </head>
 <body>
-    
-    <a-scene background="color: aqua">
+    <a-scene>
+
+        <!--camara-->
+        <a-entity id="rig"
+        movement-controls="constrainToNavMesh: true;
+                  controls: checkpoint, gamepad, trackpad, keyboard, nipple;"
+        position="0 0 20">
+        <a-entity camera
+          position="0 1.5 0"
+          look-controls="pointerLockEnabled: true">
+          <a-cursor></a-cursor>
+      </a-entity>
+        </a-entity>
 
         <a-assets>
             <a-asset-item id="cocina5" src="assets_in/modelo_3d/mesa cocina.gltf"></a-asset-item>
-        </a-assets>
+            <a-asset-item id="cama" src="assets_in/modelo_3d/cama.gltf"></a-asset-item>
 
-        <a-assets>
             <img id="pared_textura" src="assets_in/pared.jpg">
-        </a-assets>
-    
-        <a-assets>
             <img id="piso" src="assets_in/suelo.jpg">
         </a-assets>
 
+        <!--entorno-->
         <a-entity environment="preset: forest; grid: none"></a-entity>
+
+        <a-entity class="environment" position="0 50 0" light="color: #518e1f; groundColor: #c25e00; intensity: 1.884; type: hemisphere" visible=""></a-entity>
+        <a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: #413eea; bottomColor: #fead62" visible=""></a-sky>
+        
+        <!--audio-->
+        <audio id="ambiente" autoplay loop="true" src="assets_in/glitch.mp3"></audio>
+
 
           <!-- Paredes de la cabaña -->
         <!-- Pared trasera -->
         <a-entity geometry="primitive: box; width: 8; height: 4; depth: 0.2" 
-                  material="src: #pared_textura" 
+                  
                   position="0 2 -10"></a-entity>
         
         <!-- Pared izquierda -->
         <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
-                  material="src: #pared_textura" 
+                
                   position="-4 2 -6"></a-entity>
 
         <!-- Pared derecha -->
         <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
-                  material="src: #pared_textura"
+                
                   position="4 2 -6"></a-entity>
 
         <!-- Pared delantera con puerta -->
-        <a-entity geometry="depth: 0.2; height: 3.5; width: 3" material="src: #pared_textura" position="2.48992 1.95208 -2" scale="1 1.10776 1"></a-entity>
-        <a-entity geometry="depth: 0.2; height: 3.5; width: 3" material="src: #pared_textura" position="-2.57318 1.95299 -2" scale="1 1.12353 1"></a-entity>
+        <a-entity geometry="depth: 0.2; height: 3.5; width: 3"  material="color: lightblue; opacity: 0.8" position="2.48992 1.95208 -2" scale="1 1.10776 1"></a-entity>
+        <a-entity geometry="depth: 0.2; height: 3.5; width: 3"  position="-2.57318 1.95299 -2" scale="1 1.12353 1"></a-entity>
         <!-- Puerta -->
-        <a-entity geometry="depth: 0.1; height: 3; width: 2" material="src: #pared_textura" position="0 3.24171 -1.95884" rotation="0 0 90" scale="0.6518 1 1"></a-entity>
+        <a-entity geometry="depth: 0.1; height: 3; width: 2"  position="0 3.24171 -1.95884" rotation="0 0 90" scale="0.6518 1 1"></a-entity>
 
         <!-- Ventanas -->
         <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
-                  material="color: lightblue; opacity: 0.8" 
+                  
                   position="-2.5 2 -10.1"></a-entity>
 
         <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
-                  material="color: lightblue; opacity: 0.8" 
+                 
                   position="2.5 2 -10.1"></a-entity>
 
         <!-- Techo -->
         <a-entity geometry="primitive: cone; height: 4; radiusBottom: 6; segmentsRadial: 4" material="color: #502415" position="0 5.89006 -6" rotation="0 45 0"></a-entity>
+        <a-box color="white" position="2.66321 5.87043 -4.41269" scale="1.16448 2.39051 1"></a-box>
 
         <!-- Piso interior -->
         <a-entity geometry="primitive: box; width: 8; height: 0.1; depth: 8" 
@@ -70,7 +86,10 @@
         <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.00649 0.87511 -6.57772" scale="0.50044 0.40334 0.57181"></a-entity>
         <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="0.7825 0.41096 -6.53854" scale="0.20863 0.18345 0.27227"></a-entity>
         <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.02633 0.411 -5.24701" scale="0.209 0.183 0.272"></a-entity>
-    </a-scene>
+        <a-entity gltf-model="assets_in/modelo_3d/cama.gltf" position="-2.82476 0.04133 -7.90161" scale="0.44804 0.35626 0.53208" rotation="0 -179.79644794323286 0"></a-entity>
 
+        <a-text value="¿Alguna vez dudas de si este mundo es real? " font="assets_in/PTS-msdf.json" font-image="assets_in/PTS.png" negate="false" color="black" scale="2.07024 2.21072 1.949" position="-4.81444 5.85815 4.972" text="value: ¿Alguna vez dudas de si este mundo es real?"></a-text>
+    </a-scene>
+<!-- material="color: lightblue; opacity: 0.8" -->
 </body>
 </html>
