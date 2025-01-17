@@ -28,16 +28,12 @@
         <a-assets>
             <a-asset-item id="cocina5" src="assets_in/modelo_3d/mesa cocina.gltf"></a-asset-item>
             <a-asset-item id="cama" src="assets_in/modelo_3d/cama.gltf"></a-asset-item>
-
-            <video id="video" src="assets_in/carga.mp4" loop="true"></video>
-
+            <audio id="ambiente" autoplay loop="true" src="assets_in/glitch.mp3"></audio>
             <img id="pared_textura" src="assets_in/pared.jpg">
             <img id="piso" src="assets_in/suelo.jpg">
         </a-assets>
 
-        <!--video-->
-        <a-video src="#video" width="4" height="2" position="0 2 17" loop="true"></a-video>
-
+        
 
         <!--entorno-->
         <a-entity environment="preset: forest; grid: none"></a-entity>
@@ -46,7 +42,8 @@
         <a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: #413eea; bottomColor: #fead62" visible=""></a-sky>
         
         <!--audio-->
-        <audio id="ambiente" autoplay loop="true" src="assets_in/glitch.mp3"></audio>
+        <a-entity id="ambiente"  sound="src: #glitch;"></a-entity>
+
 
 
           <!-- Paredes de la cabaña -->
@@ -97,8 +94,6 @@
         <a-text value="¿Alguna vez dudas de si este mundo es real?"  font="assets_in/teko-msdf.json" font-image="assets_in/teko.png" negate="false" color="black" width="6" position="-2.5 4 8"></a-text>
 
 
-    </a-scene>
-            <!-- material="src: #piso" -->
     </a-scene>
  
 </body>
