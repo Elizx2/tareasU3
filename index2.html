@@ -8,7 +8,7 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
-    
+
 </head>
 <body>
     <a-scene>
@@ -29,9 +29,15 @@
             <a-asset-item id="cocina5" src="assets_in/modelo_3d/mesa cocina.gltf"></a-asset-item>
             <a-asset-item id="cama" src="assets_in/modelo_3d/cama.gltf"></a-asset-item>
 
+            <video id="video" src="assets_in/carga.mp4" loop="true"></video>
+
             <img id="pared_textura" src="assets_in/pared.jpg">
             <img id="piso" src="assets_in/suelo.jpg">
         </a-assets>
+
+        <!--video-->
+        <a-video src="#video" width="4" height="2" position="0 2 17" loop="true"></a-video>
+
 
         <!--entorno-->
         <a-entity environment="preset: forest; grid: none"></a-entity>
@@ -46,32 +52,32 @@
           <!-- Paredes de la cabaña -->
         <!-- Pared trasera -->
         <a-entity geometry="primitive: box; width: 8; height: 4; depth: 0.2" 
-                  
-                  position="0 2 -10"></a-entity>
+        material="src: #piso"
+         position="0 2 -10"></a-entity>
         
         <!-- Pared izquierda -->
         <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
-                
+        material="src: #piso"
                   position="-4 2 -6"></a-entity>
 
         <!-- Pared derecha -->
         <a-entity geometry="primitive: box; width: 0.2; height: 4; depth: 8" 
-                
+        material="src: #piso"
                   position="4 2 -6"></a-entity>
 
         <!-- Pared delantera con puerta -->
-        <a-entity geometry="depth: 0.2; height: 3.5; width: 3"  material="color: lightblue; opacity: 0.8" position="2.48992 1.95208 -2" scale="1 1.10776 1"></a-entity>
-        <a-entity geometry="depth: 0.2; height: 3.5; width: 3"  position="-2.57318 1.95299 -2" scale="1 1.12353 1"></a-entity>
+        <a-entity  geometry="depth: 0.2; height: 3.5; width: 3"  material="src: #piso" position="2.48992 1.95208 -2" scale="1 1.10776 1"></a-entity>
+        <a-entity  geometry="depth: 0.2; height: 3.5; width: 3" material="src: #piso" position="-2.57318 1.95299 -2" scale="1 1.12353 1"></a-entity>
         <!-- Puerta -->
-        <a-entity geometry="depth: 0.1; height: 3; width: 2"  position="0 3.24171 -1.95884" rotation="0 0 90" scale="0.6518 1 1"></a-entity>
+        <a-entity geometry="depth: 0.1; height: 3; width: 2" material="src: #piso"  position="0 3.24171 -1.95884" rotation="0 0 90" scale="0.6518 1 1"></a-entity>
 
         <!-- Ventanas -->
         <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
-                  
+                  material="color: light blue"
                   position="-2.5 2 -10.1"></a-entity>
 
         <a-entity geometry="primitive: box; width: 1.5; height: 1.5; depth: 0.1" 
-                 
+        material="color: light blue"
                   position="2.5 2 -10.1"></a-entity>
 
         <!-- Techo -->
@@ -80,7 +86,7 @@
 
         <!-- Piso interior -->
         <a-entity geometry="primitive: box; width: 8; height: 0.1; depth: 8" 
-         material="src: #piso" 
+        material="src: #piso"
                   position="0 0 -6"></a-entity>
         <!--dentro-->
         <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.00649 0.87511 -6.57772" scale="0.50044 0.40334 0.57181"></a-entity>
@@ -88,8 +94,12 @@
         <a-entity gltf-model="assets_in/modelo_3d/mesa cocina.gltf" position="2.02633 0.411 -5.24701" scale="0.209 0.183 0.272"></a-entity>
         <a-entity gltf-model="assets_in/modelo_3d/cama.gltf" position="-2.82476 0.04133 -7.90161" scale="0.44804 0.35626 0.53208" rotation="0 -179.79644794323286 0"></a-entity>
 
-        <a-text value="¿Alguna vez dudas de si este mundo es real? " font="assets_in/PTS-msdf.json" font-image="assets_in/PTS.png" negate="false" color="black" scale="2.07024 2.21072 1.949" position="-4.81444 5.85815 4.972" text="value: ¿Alguna vez dudas de si este mundo es real?"></a-text>
+        <a-text value="¿Alguna vez dudas de si este mundo es real?"  font="assets_in/teko-msdf.json" font-image="assets_in/teko.png" negate="false" color="black" width="6" position="-2.5 4 10"></a-text>
+
+
     </a-scene>
-<!-- material="color: lightblue; opacity: 0.8" -->
+            <!-- material="src: #piso" -->
+    </a-scene>
+ 
 </body>
 </html>
